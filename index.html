@@ -9,7 +9,7 @@
     <meta name="author" content="Yulun Zhang, Zixu Li, Zhiwei Chen, Zhiheng Fu, Wenbo Wang, Zihang Qiu, Zhilin Wang, Ruxin Wang, Yupeng Hu">
     <link rel="canonical" href="https://rainy-london.github.io/LightAIR/">
     <link rel="icon" type="image/png" href="static/images/favicon.png">
-    <link rel="stylesheet" href="static/css/index.css?v=20260812-3">
+    <link rel="stylesheet" href="static/css/index.css?v=20260812-4">
 
     <meta property="og:type" content="article">
     <meta property="og:title" content="LightAIR | ACM Multimedia 2026">
@@ -199,14 +199,13 @@
           </div>
 
           <figure class="paper-figure">
-            <div class="figure-label">Why TPAS is difficult</div>
-            <button class="figure-zoom" type="button" data-zoom-src="static/images/intro.webp" data-zoom-alt="LightAIR motivation figure explaining TPAS, visual decoupling failure, and shortcut learning" data-zoom-caption="LightAIR targets visual decoupling failure and shortcut learning without relying on external pose estimators." aria-label="Open the LightAIR motivation figure at full size">
+            <button class="figure-zoom" type="button" data-zoom-src="static/images/intro.webp" data-zoom-alt="LightAIR motivation figure explaining TPAS, visual decoupling failure, and shortcut learning" data-zoom-caption="Figure 1: (a) Examples of TIPR and TPAS tasks. (b) Pixel-level entanglement of appearance &amp; action features leads to unreliable feature extraction. (c) Gradient dynamics reveal that massive gradient thrusts induce shortcut learning, whereas LightAIR effectively suppresses this." aria-label="Open the LightAIR motivation figure at full size">
               <img src="static/images/intro.webp" alt="LightAIR motivation figure explaining the shift from TIPR to TPAS, visual decoupling failure, and shortcut learning" width="2835" height="2126" loading="lazy">
               <span class="zoom-hint" aria-hidden="true">
                 <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3M11 8v6M8 11h6"></path></svg>
               </span>
             </button>
-            <figcaption>LightAIR targets visual decoupling failure and shortcut learning without relying on external pose estimators.</figcaption>
+            <figcaption class="paper-caption"><strong>Figure 1:</strong> (a) Examples of TIPR and TPAS tasks. (b) Pixel-level entanglement of appearance &amp; action features leads to unreliable feature extraction. (c) Gradient dynamics reveal that massive gradient thrusts induce shortcut learning, whereas LightAIR effectively suppresses this.</figcaption>
           </figure>
         </div>
       </section>
@@ -238,139 +237,65 @@
           </div>
 
           <figure class="paper-figure method-figure">
-            <div class="figure-label">LightAIR framework</div>
-            <button class="figure-zoom" type="button" data-zoom-src="static/images/method.webp" data-zoom-alt="LightAIR framework with Action Inversion Operator, Orthogonal Null-Space Projection, and Gradient Rectification" data-zoom-caption="AIO extracts action anchors, ONSP guarantees forward decoupling, and GR protects the semantic manifold during backpropagation." aria-label="Open the LightAIR framework figure at full size">
+            <button class="figure-zoom" type="button" data-zoom-src="static/images/method.webp" data-zoom-alt="LightAIR framework with Action Inversion Operator, Orthogonal Null-Space Projection, and Gradient Rectification" data-zoom-caption="Figure 2: LightAIR consists of (a) Action Inversion Operator, which utilizes textual semantic priors to extract pure action features; (b) Orthogonal Null-Space Projection, which ensures strict forward decoupling by projecting raw visual features; and (c) Gradient Rectification, which computes riemannian gradients to effectively cut off harmful shortcuts." aria-label="Open the LightAIR framework figure at full size">
               <img src="static/images/method.webp" alt="LightAIR framework with Action Inversion Operator, Orthogonal Null-Space Projection, and Gradient Rectification" width="2835" height="1350" loading="lazy">
               <span class="zoom-hint" aria-hidden="true">
                 <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3M11 8v6M8 11h6"></path></svg>
               </span>
             </button>
-            <figcaption>AIO extracts action anchors, ONSP guarantees forward decoupling, and GR protects the semantic manifold during backpropagation.</figcaption>
+            <figcaption class="paper-caption"><strong>Figure 2:</strong> LightAIR consists of <em>(a) Action Inversion Operator</em>, which utilizes textual semantic priors to extract pure action features; <em>(b) Orthogonal Null-Space Projection</em>, which ensures strict forward decoupling by projecting raw visual features; and <em>(c) Gradient Rectification</em>, which computes riemannian gradients to effectively cut off harmful shortcuts.</figcaption>
           </figure>
         </div>
       </section>
 
       <section class="results" id="results" aria-labelledby="results-title">
-        <div class="results-dark">
-          <div class="section-shell">
-            <div class="section-heading section-heading-light">
-              <p class="section-index">03 / Results</p>
-              <h2 id="results-title">Strong retrieval, robust beyond the training domain</h2>
-              <p>LightAIR improves fine-grained anomaly retrieval while generalizing across weather, out-of-distribution data, and conventional person retrieval benchmarks.</p>
-            </div>
-
-            <div class="metric-rail" aria-label="Selected paper results">
-              <article>
-                <p>PAB (1M)</p>
-                <strong>85.49</strong>
-                <span>R@1</span>
-                <small>92.20 mAP</small>
-              </article>
-              <article>
-                <p>MultiWeather mean</p>
-                <strong>68.87</strong>
-                <span>R@1</span>
-                <small>79.69 mAP</small>
-              </article>
-              <article>
-                <p>UCC OOD (1M)</p>
-                <strong>63.27</strong>
-                <span>R@1</span>
-                <small>52.25 mAP</small>
-              </article>
-              <article>
-                <p>UFine3C</p>
-                <strong>83.32</strong>
-                <span>Avg. Recall</span>
-                <small>TIPR benchmark</small>
-              </article>
-            </div>
-
-            <div class="comparison" aria-labelledby="comparison-title">
-              <div class="comparison-heading">
-                <div>
-                  <h3 id="comparison-title">Consistent gains over CMP</h3>
-                  <p>R@1 comparison from the paper.</p>
-                </div>
-                <div class="legend" aria-label="Chart legend">
-                  <span><i class="legend-lightair"></i>LightAIR</span>
-                  <span><i class="legend-cmp"></i>CMP</span>
-                </div>
-              </div>
-
-              <div class="bar-groups">
-                <div class="bar-group">
-                  <div class="bar-label"><span>PAB (1M)</span><span>85.49 vs 84.93</span></div>
-                  <div class="bar-row"><i class="bar bar-lightair" style="--bar-width: 85.49%"></i></div>
-                  <div class="bar-row"><i class="bar bar-cmp" style="--bar-width: 84.93%"></i></div>
-                </div>
-                <div class="bar-group">
-                  <div class="bar-label"><span>MultiWeather mean</span><span>68.87 vs 67.12</span></div>
-                  <div class="bar-row"><i class="bar bar-lightair" style="--bar-width: 68.87%"></i></div>
-                  <div class="bar-row"><i class="bar bar-cmp" style="--bar-width: 67.12%"></i></div>
-                </div>
-                <div class="bar-group">
-                  <div class="bar-label"><span>UCC OOD (1M)</span><span>63.27 vs 55.23</span></div>
-                  <div class="bar-row"><i class="bar bar-lightair" style="--bar-width: 63.27%"></i></div>
-                  <div class="bar-row"><i class="bar bar-cmp" style="--bar-width: 55.23%"></i></div>
-                </div>
-              </div>
-              <p class="results-note">All values are reported in the paper. Data scale is shown where applicable.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="quantitative-results" aria-labelledby="benchmark-title">
+        <div class="quantitative-results" aria-labelledby="results-title">
           <div class="section-shell">
             <div class="results-subheading">
-              <p class="section-index">Complete quantitative results</p>
-              <h3 id="benchmark-title">Results across TPAS and TIPR benchmarks</h3>
+              <p class="section-index">03 / Results</p>
+              <h2 id="results-title">Results across TPAS and TIPR benchmarks</h2>
               <p>The complete paper tables report performance under multi-weather, standard TPAS, out-of-distribution, and conventional text-based person retrieval settings.</p>
             </div>
 
             <div class="benchmark-grid">
               <figure class="paper-figure">
-                <div class="figure-label">Multi-weather TPAS</div>
-                <button class="figure-zoom" type="button" data-zoom-src="static/images/results/table-multiweather.webp" data-zoom-alt="Full Multi-weather performance comparison table" data-zoom-caption="Performance comparison on the PAB multi-weather test setting." aria-label="Open the Multi-weather results table at full size">
+                <button class="figure-zoom" type="button" data-zoom-src="static/images/results/table-multiweather.webp" data-zoom-alt="Full Multi-weather performance comparison table" data-zoom-caption="Table 1: Performance comparison on the PAB dataset of multi-weather test setting, measured by R@1 and mAP for each weather. The overall best results are indicated in bold." aria-label="Open the Multi-weather results table at full size">
                   <img src="static/images/results/table-multiweather.webp" alt="Full Multi-weather performance table comparing LightAIR with X-VLM and CMP" width="4260" height="360" loading="lazy">
                   <span class="zoom-hint" aria-hidden="true">
                     <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3M11 8v6M8 11h6"></path></svg>
                   </span>
                 </button>
-                <figcaption>LightAIR obtains the best mean R@1 and mAP across all weather conditions.</figcaption>
+                <figcaption class="paper-caption"><strong>Table 1:</strong> Performance comparison on the PAB dataset of multi-weather test setting, measured by R@1 and mAP for each weather. The overall best results are indicated in <strong>bold</strong>.</figcaption>
               </figure>
 
               <figure class="paper-figure">
-                <div class="figure-label">PAB benchmark</div>
-                <button class="figure-zoom" type="button" data-zoom-src="static/images/results/table-pab.webp" data-zoom-alt="Full PAB performance comparison table" data-zoom-caption="Performance comparison on PAB under standard, 0.1M, and 1M settings." aria-label="Open the PAB results table at full size">
+                <button class="figure-zoom" type="button" data-zoom-src="static/images/results/table-pab.webp" data-zoom-alt="Full PAB performance comparison table" data-zoom-caption="Table 2: Performance comparison on the PAB dataset, measured by R@K and mAP. Over-all best results are in bold, and the sub-optimal is underlined." aria-label="Open the PAB results table at full size">
                   <img src="static/images/results/table-pab.webp" alt="Full PAB performance table under standard, 0.1M, and 1M training settings" width="2020" height="1475" loading="lazy">
                   <span class="zoom-hint" aria-hidden="true">
                     <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3M11 8v6M8 11h6"></path></svg>
                   </span>
                 </button>
-                <figcaption>LightAIR reaches 85.49 R@1 and 92.20 mAP in the 1M setting.</figcaption>
+                <figcaption class="paper-caption"><strong>Table 2:</strong> Performance comparison on the PAB dataset, measured by R@K and mAP. Over-all best results are in bold, and the sub-optimal is underlined.</figcaption>
               </figure>
 
               <figure class="paper-figure">
-                <div class="figure-label">TIPR generalization</div>
-                <button class="figure-zoom" type="button" data-zoom-src="static/images/results/table-tipr.webp" data-zoom-alt="Full TIPR performance comparison table" data-zoom-caption="Performance comparison on CUHK-PEDES, ICFG-PEDES, RSTPReid, and UFineBench." aria-label="Open the TIPR results table at full size">
-                  <img src="static/images/results/table-tipr.webp" alt="Full TIPR performance table across CUHK-PEDES, ICFG-PEDES, RSTPReid, and UFineBench" width="2055" height="1630" loading="lazy">
-                  <span class="zoom-hint" aria-hidden="true">
-                    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3M11 8v6M8 11h6"></path></svg>
-                  </span>
-                </button>
-                <figcaption>LightAIR consistently leads on five conventional TIPR test sets.</figcaption>
-              </figure>
-
-              <figure class="paper-figure">
-                <div class="figure-label">Out-of-distribution TPAS</div>
-                <button class="figure-zoom" type="button" data-zoom-src="static/images/results/table-ucc.webp" data-zoom-alt="Full UCC out-of-distribution performance comparison table" data-zoom-caption="Performance comparison under the UCC out-of-distribution setting." aria-label="Open the UCC OOD results table at full size">
+                <button class="figure-zoom" type="button" data-zoom-src="static/images/results/table-ucc.webp" data-zoom-alt="Full UCC out-of-distribution performance comparison table" data-zoom-caption="Table 3: Comparison with existing methods in the OOD setting, measured by R@k and mAP. The overall best results are indicated in bold, and second-best results are underlined." aria-label="Open the UCC OOD results table at full size">
                   <img src="static/images/results/table-ucc.webp" alt="Full UCC out-of-distribution performance table comparing LightAIR with prior methods" width="2020" height="772" loading="lazy">
                   <span class="zoom-hint" aria-hidden="true">
                     <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3M11 8v6M8 11h6"></path></svg>
                   </span>
                 </button>
-                <figcaption>LightAIR improves UCC OOD R@1 to 63.27 in the 1M setting.</figcaption>
+                <figcaption class="paper-caption"><strong>Table 3:</strong> Comparison with existing methods in the OOD setting, measured by R@k and mAP. The overall best results are indicated in bold, and second-best results are underlined.</figcaption>
+              </figure>
+
+              <figure class="paper-figure">
+                <button class="figure-zoom" type="button" data-zoom-src="static/images/results/table-tipr.webp" data-zoom-alt="Full TIPR performance comparison table" data-zoom-caption="Table 4: Performance comparison on CUHK-PEDES(M), ICFG-PEDES(M), RSTPReid(M), and UFineBench(M)." aria-label="Open the TIPR results table at full size">
+                  <img src="static/images/results/table-tipr.webp" alt="Full TIPR performance table across CUHK-PEDES, ICFG-PEDES, RSTPReid, and UFineBench" width="2055" height="1630" loading="lazy">
+                  <span class="zoom-hint" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3M11 8v6M8 11h6"></path></svg>
+                  </span>
+                </button>
+                <figcaption class="paper-caption"><strong>Table 4:</strong> Performance comparison on CUHK-PEDES(M), ICFG-PEDES(M), RSTPReid(M), and UFineBench(M).</figcaption>
               </figure>
             </div>
 
@@ -385,13 +310,13 @@
               <p>Across challenging descriptions, LightAIR moves action-consistent gallery images toward the top of the retrieval list compared with CMP.</p>
             </div>
             <figure class="paper-figure qualitative-figure">
-              <button class="figure-zoom" type="button" data-zoom-src="static/images/qualitative.webp" data-zoom-alt="Qualitative retrieval comparisons between LightAIR and CMP" data-zoom-caption="Qualitative retrieval comparisons from the LightAIR paper." aria-label="Open the qualitative retrieval figure at full size">
+              <button class="figure-zoom" type="button" data-zoom-src="static/images/qualitative.webp" data-zoom-alt="Qualitative retrieval comparisons between LightAIR and CMP" data-zoom-caption="Qualitative comparison of successful retrieval cases between LightAIR and the baseline CMP. Matched images are marked by green boxes, mismatched images are marked in red, and blue boxes indicate hard negatives." aria-label="Open the qualitative retrieval figure at full size">
                 <img src="static/images/qualitative.webp" alt="Qualitative retrieval comparisons between LightAIR and CMP for four action-sensitive text queries" width="2835" height="3780" loading="lazy">
                 <span class="zoom-hint" aria-hidden="true">
                   <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3M11 8v6M8 11h6"></path></svg>
                 </span>
               </button>
-              <figcaption>Qualitative retrieval comparisons from the LightAIR paper.</figcaption>
+              <figcaption class="paper-caption">Qualitative comparison of successful retrieval cases between LightAIR and the baseline CMP. Matched images are marked by green boxes, mismatched images are marked in red, and blue boxes indicate hard negatives.</figcaption>
             </figure>
           </div>
         </div>
