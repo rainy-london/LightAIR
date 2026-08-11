@@ -525,7 +525,7 @@ select {
 }
 
 .section {
-  padding: 88px 0;
+  padding: 64px 0;
 }
 
 .section-heading {
@@ -701,7 +701,7 @@ select {
 }
 
 .quantitative-results {
-  padding: 88px 0;
+  padding: 64px 0;
   border-bottom: 1px solid var(--line);
   background: var(--pale);
 }
@@ -734,7 +734,7 @@ select {
 }
 
 .qualitative {
-  padding: 88px 0;
+  padding: 64px 0;
   background: var(--white);
 }
 
@@ -769,7 +769,7 @@ select {
 
 .citation {
   padding-top: 0;
-  padding-bottom: 88px;
+  padding-bottom: 64px;
 }
 
 .citation-rule {
