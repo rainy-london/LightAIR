@@ -262,6 +262,15 @@ This implementation builds on [X2-VLM](https://github.com/zengyan-97/X2-VLM). We
 
 <table style="width:100%; border:none; text-align:center; background-color:transparent;">
   <tr style="border:none;">
+    <td style="width:30%; border:none; vertical-align:top; padding-top:30px;">
+      <img src="assets/logos/combiner-logo.png" alt="COMBINER" style="height:65px; width:auto; border-radius:8px; margin-bottom:8px;"><br>
+      <b>COMBINER (TIP'26)</b><br>
+      <span style="font-size: 0.9em;">
+        <a href="https://arxiv.org/abs/2606.04604" target="_blank">Paper</a> | 
+        <a href="https://lee-zixu.github.io/COMBINER.github.io/" target="_blank">Project</a> | 
+        <a href="https://github.com/iLearn-Lab/TIP26-COMBINER" target="_blank">Code</a> 
+      </span>
+    </td>
       <td style="width:30%; border:none; vertical-align:top; padding-top:30px;">
       <img src="assets/logos/tema-logo.png" alt="TEMA" style="height:65px; width:auto; border-radius:8px; margin-bottom:8px;"><br>
       <b>TEMA (ACL'26)</b><br>
@@ -281,6 +290,8 @@ This implementation builds on [X2-VLM](https://github.com/zengyan-97/X2-VLM). We
         <a href="http://xhslink.com/o/2Cm9p4DMS1" target="_blank">Blog Post (Chinese)</a>    
       </span>
     </td>  
+          </tr>
+    <tr style="border:none;">
     <td style="width:30%; border:none; vertical-align:top; padding-top:30px;">
       <img src="assets/logos/airknow-logo.png" alt="Air-Know" style="height:65px; width:auto; border-radius:8px; margin-bottom:8px;"><br>
       <b>Air-Know (CVPR'26)</b><br>
@@ -291,8 +302,6 @@ This implementation builds on [X2-VLM](https://github.com/zengyan-97/X2-VLM). We
         <a href="http://xhslink.com/o/5oVjQ1a3apO" target="_blank">Blog Post (Chinese)</a>  
       </span>
     </td>  
-      </tr>
-  <tr style="border:none;">
     <td style="width:30%; border:none; vertical-align:top; padding-top:30px;">
       <img src="assets/logos/intent-logo.png" alt="INTENT" style="height:65px; width:auto; border-radius:8px; margin-bottom:8px;"><br>
       <b>INTENT (AAAI'26)</b><br>
@@ -311,6 +320,8 @@ This implementation builds on [X2-VLM](https://github.com/zengyan-97/X2-VLM). We
         <a href="https://github.com/Lee-zixu/HABIT" target="_blank">Code</a>
       </span>
     </td>
+        </tr>
+    <tr style="border:none;">
     <td style="width:30%; border:none; vertical-align:top; padding-top:30px;">
       <img src="assets/logos/retrack-logo.png" alt="ReTrack" style="height:65px; width:auto; border-radius:8px; margin-bottom:8px;"><br>
       <b>ReTrack (AAAI'26)</b><br>
@@ -320,8 +331,6 @@ This implementation builds on [X2-VLM](https://github.com/zengyan-97/X2-VLM). We
         <a href="https://github.com/Lee-zixu/ReTrack" target="_blank">Code</a> |
       </span>
     </td>
-  </tr>
-  <tr style="border:none;">
     <td style="width:30%; border:none; vertical-align:top; padding-top:30px;">
       <img src="assets/logos/hud-logo.png" alt="HUD" style="height:65px; width:auto; border-radius:8px; margin-bottom:8px;"><br>
       <b>HUD (ACM MM'25)</b><br>
@@ -340,6 +349,8 @@ This implementation builds on [X2-VLM](https://github.com/zengyan-97/X2-VLM). We
         <a href="https://github.com/ZivChen-Ty/OFFSET" target="_blank">Code</a>
       </span>
     </td>
+        </tr>
+        <tr style="border:none;">
     <td style="width:30%; border:none; vertical-align:top; padding-top:30px;">
       <img src="assets/logos/encoder-logo.png" alt="ENCODER" style="height:65px; width:auto; border-radius:8px; margin-bottom:8px;"><br>
       <b>ENCODER (AAAI'25)</b><br>
