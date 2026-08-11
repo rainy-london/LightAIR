@@ -204,14 +204,12 @@ This implementation builds on [X2-VLM](https://github.com/zengyan-97/X2-VLM). We
 ## Citation
 
 ```bibtex
-@inproceedings{zhang2026lightair,
-  author    = {Yulun Zhang and Zixu Li and Zhiwei Chen and Zhiheng Fu and
-               Wenbo Wang and Zihang Qiu and Zhilin Wang and Ruxin Wang and Yupeng Hu},
-  title     = {LightAIR: Lightweight Action Inversion and Riemannian Rectification
-               for Text-based Person Anomaly Search},
-  booktitle = {Proceedings of the 34th ACM International Conference on Multimedia},
-  year      = {2026},
-  doi       = {10.1145/3767308.3835461}
+@article{zhang2026lightair,
+  title   = {LightAIR: Lightweight Action Inversion and Riemannian Rectification for Text-based Person Anomaly Search},
+  author  = {Zhang, Yulun and Li, Zixu and Chen, Zhiwei and Fu, Zhiheng and Wang, Wenbo and Qiu, Zihang and Wang, Zhilin and Wang, Ruxin and Hu, Yupeng},
+  journal = {arXiv preprint arXiv:2608.09152},
+  year    = {2026},
+  url     = {https://arxiv.org/abs/2608.09152}
 }
 ```
 
