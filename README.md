@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/lightair-logo.png" alt="LightAIR logo" width="900">
+  <img src="assets/lightair-logo.png" alt="LightAIR logo" width="600">
 </p>
 
 <h1 align="center">[ACM MM 2026] LightAIR: Lightweight Action Inversion and Riemannian Rectification for Text-based Person Anomaly Search</h1>
@@ -21,8 +21,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/ACM%20MM-2026-6f42c1.svg" alt="ACM MM 2026">
-  <img src="https://img.shields.io/badge/Paper-Coming%20Soon-b31b1b.svg" alt="Paper coming soon">
+  <a href="https://arxiv.org/abs/2608.09152"><img src="https://img.shields.io/badge/Arxiv%20Soon-b31b1b.svg" alt="Arxiv">
   <a href="https://zhihfu.github.io/"><img src="https://img.shields.io/badge/Author-Homepage-blue.svg" alt="Author homepage"></a>
   <a href="https://pytorch.org/get-started/locally/"><img src="https://img.shields.io/badge/PyTorch-2.1%2B-EE4C2C?logo=pytorch&logoColor=white" alt="PyTorch"></a>
   <img src="https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white" alt="Python">
