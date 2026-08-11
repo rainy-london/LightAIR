@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/lightair-logo.png" alt="LightAIR logo" width="600">
+  <img src="assets/lightair-logo.png" alt="LightAIR logo" width="500">
 </p>
 
 <h1 align="center">[ACM MM 2026] LightAIR: Lightweight Action Inversion and Riemannian Rectification for Text-based Person Anomaly Search</h1>
