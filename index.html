@@ -113,16 +113,21 @@
             Lightweight Action Inversion and Riemannian Rectification for Text-based Person Anomaly Search
           </h1>
 
+          <div class="hero-abstract" aria-labelledby="hero-abstract-title">
+            <h2 id="hero-abstract-title">Abstract</h2>
+            <p>Traditional Text-based Person Search (TPS) is typically limited to matching static appearance attributes, severely neglecting dynamic action information. The Text-based Person Anomaly Search (TPAS) task bridges this gap, requiring models to locate micro-level specific abnormal behaviors while matching macro-level appearance of pedestrians. However, current TPAS methods face fundamental limitations: external explicit pose estimators are fragile in unconstrained surveillance scenarios, and implicit learning encounters visual decoupling failure under pixel-level entanglement, causing dominant appearance information to easily swallow and contaminate subtle action features. Furthermore, performing contrastive optimization on hard negative samples ("same appearance, different actions") in conventional Euclidean spaces induces severe shortcut learning. To address these, we propose the Lightweight Action Inversion and Riemannian rectification network (LightAIR). First, it introduces textual semantic priors as anchors via a lightweight action inversion operator to extract pure action features, thereby overcoming visual-inherent coupling. Subsequently, it employs orthogonal null-space projection to constrain appearance features within the orthogonal complement space of action features, guaranteeing strict forward decoupling. Finally, we designed a gradient rectification module that computes the Riemannian gradient to constrain the backpropagation trajectory, forcing the gradient flow to update strictly along the tangent space that preserves decoupling properties, thereby cutting off harmful shortcuts. Extensive experiments on the widely used TPAS and TIPR datasets demonstrate that LightAIR significantly outperforms existing state-of-the-art methods. Codes are available at <a href="https://github.com/rainy-london/LightAIR" target="_blank" rel="noreferrer">github.com/rainy-london/LightAIR</a>.</p>
+          </div>
+
           <div class="authors" aria-label="Paper authors">
-            <a href="https://rainy-london.github.io/" target="_blank" rel="noreferrer">Yulun Zhang</a>,
-            <a href="https://lee-zixu.github.io/" target="_blank" rel="noreferrer">Zixu Li<sup>&dagger;</sup></a>,
-            <a href="https://zivchen-ty.github.io/" target="_blank" rel="noreferrer">Zhiwei Chen</a>,
-            <a href="https://zhihfu.github.io/" target="_blank" rel="noreferrer">Zhiheng Fu</a>,
-            <span>Wenbo Wang</span>,
-            <span>Zihang Qiu</span>,
-            <span>Zhilin Wang</span>,
-            <a href="https://mathwrx.github.io/" target="_blank" rel="noreferrer">Ruxin Wang<sup>&#9993;</sup></a>,
-            <a href="https://faculty.sdu.edu.cn/huyupeng/en/index.htm" target="_blank" rel="noreferrer">Yupeng Hu</a>
+            <a href="https://rainy-london.github.io/" target="_blank" rel="noreferrer">Yulun Zhang<sup>1</sup></a>,
+            <a href="https://lee-zixu.github.io/" target="_blank" rel="noreferrer">Zixu Li<sup>2,&dagger;</sup></a>,
+            <a href="https://zivchen-ty.github.io/" target="_blank" rel="noreferrer">Zhiwei Chen<sup>2</sup></a>,
+            <a href="https://zhihfu.github.io/" target="_blank" rel="noreferrer">Zhiheng Fu<sup>2</sup></a>,
+            <span>Wenbo Wang<sup>2</sup></span>,
+            <span>Zihang Qiu<sup>2</sup></span>,
+            <span>Zhilin Wang<sup>2</sup></span>,
+            <a href="https://mathwrx.github.io/" target="_blank" rel="noreferrer">Ruxin Wang<sup>1,&#9993;</sup></a>,
+            <a href="https://faculty.sdu.edu.cn/huyupeng/en/index.htm" target="_blank" rel="noreferrer">Yupeng Hu<sup>2</sup></a>
           </div>
 
           <div class="affiliations">
@@ -319,6 +324,63 @@
           </div>
         </div>
 
+        <div class="quantitative-results" aria-labelledby="benchmark-title">
+          <div class="section-shell">
+            <div class="results-subheading">
+              <p class="section-index">Complete quantitative results</p>
+              <h3 id="benchmark-title">Results across TPAS and TIPR benchmarks</h3>
+              <p>The complete paper tables report performance under multi-weather, standard TPAS, out-of-distribution, and conventional text-based person retrieval settings.</p>
+            </div>
+
+            <div class="benchmark-grid">
+              <figure class="paper-figure benchmark-wide">
+                <div class="figure-label">Multi-weather TPAS</div>
+                <button class="figure-zoom" type="button" data-zoom-src="static/images/results/table-multiweather.webp" data-zoom-alt="Full Multi-weather performance comparison table" data-zoom-caption="Performance comparison on the PAB multi-weather test setting." aria-label="Open the Multi-weather results table at full size">
+                  <img src="static/images/results/table-multiweather.webp" alt="Full Multi-weather performance table comparing LightAIR with X-VLM and CMP" width="4260" height="360" loading="lazy">
+                  <span class="zoom-hint" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3M11 8v6M8 11h6"></path></svg>
+                  </span>
+                </button>
+                <figcaption>LightAIR obtains the best mean R@1 and mAP across all weather conditions.</figcaption>
+              </figure>
+
+              <figure class="paper-figure">
+                <div class="figure-label">PAB benchmark</div>
+                <button class="figure-zoom" type="button" data-zoom-src="static/images/results/table-pab.webp" data-zoom-alt="Full PAB performance comparison table" data-zoom-caption="Performance comparison on PAB under standard, 0.1M, and 1M settings." aria-label="Open the PAB results table at full size">
+                  <img src="static/images/results/table-pab.webp" alt="Full PAB performance table under standard, 0.1M, and 1M training settings" width="2020" height="1475" loading="lazy">
+                  <span class="zoom-hint" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3M11 8v6M8 11h6"></path></svg>
+                  </span>
+                </button>
+                <figcaption>LightAIR reaches 85.49 R@1 and 92.20 mAP in the 1M setting.</figcaption>
+              </figure>
+
+              <figure class="paper-figure">
+                <div class="figure-label">TIPR generalization</div>
+                <button class="figure-zoom" type="button" data-zoom-src="static/images/results/table-tipr.webp" data-zoom-alt="Full TIPR performance comparison table" data-zoom-caption="Performance comparison on CUHK-PEDES, ICFG-PEDES, RSTPReid, and UFineBench." aria-label="Open the TIPR results table at full size">
+                  <img src="static/images/results/table-tipr.webp" alt="Full TIPR performance table across CUHK-PEDES, ICFG-PEDES, RSTPReid, and UFineBench" width="2055" height="1630" loading="lazy">
+                  <span class="zoom-hint" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3M11 8v6M8 11h6"></path></svg>
+                  </span>
+                </button>
+                <figcaption>LightAIR consistently leads on five conventional TIPR test sets.</figcaption>
+              </figure>
+
+              <figure class="paper-figure benchmark-compact">
+                <div class="figure-label">Out-of-distribution TPAS</div>
+                <button class="figure-zoom" type="button" data-zoom-src="static/images/results/table-ucc.webp" data-zoom-alt="Full UCC out-of-distribution performance comparison table" data-zoom-caption="Performance comparison under the UCC out-of-distribution setting." aria-label="Open the UCC OOD results table at full size">
+                  <img src="static/images/results/table-ucc.webp" alt="Full UCC out-of-distribution performance table comparing LightAIR with prior methods" width="2020" height="772" loading="lazy">
+                  <span class="zoom-hint" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3M11 8v6M8 11h6"></path></svg>
+                  </span>
+                </button>
+                <figcaption>LightAIR improves UCC OOD R@1 to 63.27 in the 1M setting.</figcaption>
+              </figure>
+            </div>
+
+          </div>
+        </div>
+
         <div class="qualitative">
           <div class="section-shell qualitative-layout">
             <div class="qualitative-copy">
@@ -368,12 +430,6 @@
           </div>
 
           <div class="citation-grid">
-            <article class="abstract-block">
-              <h3>Abstract</h3>
-              <p>LightAIR addresses visual decoupling failure and shortcut learning in text-based person anomaly search. It reconstructs action features from textual semantic anchors, projects appearance into the orthogonal complement of the action subspace, and rectifies optimization along a Riemannian tangent space. Experiments on TPAS and TIPR benchmarks show consistent state-of-the-art performance.</p>
-              <p class="acknowledgement">The implementation builds on X2-VLM and evaluates TPAS with the PAB benchmark. See the repository README for installation, data preparation, and evaluation instructions.</p>
-            </article>
-
             <div class="bibtex-block">
               <div class="bibtex-header">
                 <h3>BibTeX</h3>

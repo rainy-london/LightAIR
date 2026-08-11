@@ -365,8 +365,8 @@ select {
   display: flex;
   align-items: center;
   min-height: 760px;
-  height: 92vh;
-  max-height: 920px;
+  height: auto;
+  max-height: none;
   padding-top: var(--header-height);
   overflow: hidden;
   background: #fbfdff;
@@ -409,8 +409,32 @@ select {
   color: var(--cyan-dark);
 }
 
+.hero-abstract {
+  width: 100%;
+  margin-top: 28px;
+}
+
+.hero-abstract h2 {
+  margin: 0 0 10px;
+  color: var(--ink);
+  font-size: 18px;
+  font-weight: 760;
+  line-height: 1.35;
+}
+
+.hero-abstract p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.72;
+}
+
+.hero-abstract a {
+  color: var(--cyan-dark);
+}
+
 .authors {
-  max-width: 1050px;
+  max-width: none;
   margin-top: 28px;
   color: var(--ink-soft);
   font-size: 18px;
@@ -427,6 +451,12 @@ select {
   text-decoration: underline;
 }
 
+.authors a,
+.authors > span,
+.affiliations > span {
+  white-space: nowrap;
+}
+
 .authors sup,
 .affiliations sup {
   color: var(--orange);
@@ -437,7 +467,7 @@ select {
   display: flex;
   flex-wrap: wrap;
   gap: 2px 18px;
-  max-width: 1030px;
+  max-width: none;
   margin-top: 8px;
   color: var(--muted);
   font-size: 13px;
@@ -913,6 +943,50 @@ select {
   font-size: 12px;
 }
 
+.quantitative-results {
+  padding: 116px 0 124px;
+  border-bottom: 1px solid var(--line);
+  background: var(--pale);
+}
+
+.results-subheading h3 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 42px;
+  font-weight: 760;
+  line-height: 1.14;
+}
+
+.results-subheading > p:last-child {
+  margin: 22px 0 0;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+.benchmark-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 60px 42px;
+  margin-top: 64px;
+}
+
+.benchmark-grid .paper-figure {
+  min-width: 0;
+  margin: 0;
+}
+
+.benchmark-wide,
+.benchmark-compact {
+  grid-column: 1 / -1;
+}
+
+.benchmark-compact {
+  width: min(100%, 920px);
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+
 .qualitative {
   padding: 116px 0 126px;
   background: var(--white);
@@ -1042,6 +1116,7 @@ select {
 }
 
 .bibtex-block {
+  grid-column: 1 / -1;
   overflow: hidden;
   border: 1px solid var(--line-strong);
   border-radius: 6px;
@@ -1419,6 +1494,19 @@ select {
     line-height: 1.12;
   }
 
+  .hero-abstract {
+    margin-top: 22px;
+  }
+
+  .hero-abstract h2 {
+    font-size: 16px;
+  }
+
+  .hero-abstract p {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
   .authors {
     margin-top: 18px;
     font-size: 14px;
@@ -1430,6 +1518,10 @@ select {
     margin-top: 5px;
     font-size: 11px;
     line-height: 1.45;
+  }
+
+  .affiliations > span {
+    white-space: normal;
   }
 
   .venue {
@@ -1552,6 +1644,31 @@ select {
     align-items: flex-start;
     flex-direction: column;
     gap: 2px;
+  }
+
+  .quantitative-results {
+    padding: 80px 0 88px;
+  }
+
+  .results-subheading h3 {
+    font-size: 32px;
+    line-height: 1.17;
+  }
+
+  .results-subheading > p:last-child {
+    margin-top: 19px;
+    font-size: 16px;
+  }
+
+  .benchmark-grid {
+    grid-template-columns: 1fr;
+    gap: 44px;
+    margin-top: 44px;
+  }
+
+  .benchmark-wide,
+  .benchmark-compact {
+    grid-column: 1;
   }
 
   .qualitative {
