@@ -372,21 +372,10 @@ select {
   background: #fbfdff;
 }
 
-.hero::after {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  height: 64px;
-  content: "";
-  background: var(--white);
-  clip-path: polygon(0 74%, 100% 0, 100% 100%, 0 100%);
-}
-
 .hero-shell {
   position: relative;
   z-index: 2;
-  padding: 58px 0 112px;
+  padding: 58px 0 76px;
 }
 
 .hero-logo {
@@ -533,43 +522,6 @@ select {
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 1.8;
-}
-
-.section-cue {
-  position: absolute;
-  bottom: 49px;
-  left: 50%;
-  z-index: 3;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  color: var(--muted);
-  font-size: 12px;
-  font-weight: 700;
-  text-decoration: none;
-  transform: translateX(-50%);
-}
-
-.section-cue svg {
-  width: 18px;
-  height: 18px;
-  fill: none;
-  stroke: currentColor;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 1.8;
-  animation: cue-bounce 1.8s ease-in-out infinite;
-}
-
-@keyframes cue-bounce {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(5px);
-  }
 }
 
 .section {
@@ -1477,10 +1429,6 @@ select {
     align-items: flex-start;
   }
 
-  .hero::after {
-    height: 42px;
-  }
-
   .hero-shell {
     padding: 42px 0 78px;
   }
@@ -1541,10 +1489,6 @@ select {
     min-width: 0;
     min-height: 43px;
     padding: 0 12px;
-  }
-
-  .section-cue {
-    bottom: 21px;
   }
 
   .section,
