@@ -525,7 +525,7 @@ select {
 }
 
 .section {
-  padding: 124px 0;
+  padding: 88px 0;
 }
 
 .section-heading {
@@ -553,7 +553,7 @@ select {
 .section-heading > p:last-child,
 .qualitative-copy > p:last-child {
   max-width: 1120px;
-  margin: 24px 0 0;
+  margin: 18px 0 0;
   color: var(--muted);
   font-size: 20px;
   line-height: 1.65;
@@ -564,27 +564,27 @@ select {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0;
-  margin-top: 68px;
+  margin-top: 48px;
   border-top: 1px solid var(--line-strong);
   border-bottom: 1px solid var(--line-strong);
 }
 
 .problem-rail > div,
 .method-rail > article {
-  min-height: 220px;
-  padding: 32px 34px 34px 0;
+  min-height: 200px;
+  padding: 28px 30px 30px 0;
 }
 
 .problem-rail > div + div,
 .method-rail > article + article {
-  padding-left: 34px;
+  padding-left: 30px;
   border-left: 1px solid var(--line);
 }
 
 .rail-mark,
 .method-number {
   display: inline-block;
-  margin-bottom: 25px;
+  margin-bottom: 18px;
   font-size: 15px;
   font-weight: 800;
 }
@@ -623,7 +623,7 @@ select {
 }
 
 .paper-figure {
-  margin: 80px 0 0;
+  margin: 52px 0 0;
 }
 
 .figure-zoom {
@@ -676,7 +676,7 @@ select {
 }
 
 .paper-figure figcaption {
-  margin-top: 16px;
+  margin-top: 12px;
   color: var(--ink-soft);
   font-size: 14px;
   line-height: 1.55;
@@ -701,7 +701,7 @@ select {
 }
 
 .quantitative-results {
-  padding: 116px 0 124px;
+  padding: 88px 0;
   border-bottom: 1px solid var(--line);
   background: var(--pale);
 }
@@ -715,7 +715,7 @@ select {
 }
 
 .results-subheading > p:last-child {
-  margin: 22px 0 0;
+  margin: 18px 0 0;
   color: var(--muted);
   font-size: 18px;
   line-height: 1.65;
@@ -724,8 +724,8 @@ select {
 .benchmark-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  gap: 64px;
-  margin-top: 64px;
+  gap: 48px;
+  margin-top: 48px;
 }
 
 .benchmark-grid .paper-figure {
@@ -734,21 +734,21 @@ select {
 }
 
 .qualitative {
-  padding: 116px 0 126px;
+  padding: 88px 0;
   background: var(--white);
 }
 
 .qualitative-layout {
   display: grid;
   grid-template-columns: minmax(240px, 0.34fr) minmax(0, 0.66fr);
-  gap: 72px;
+  gap: 56px;
   align-items: start;
 }
 
 .qualitative-copy {
   position: sticky;
   top: calc(var(--header-height) + 36px);
-  padding-top: 12px;
+  padding-top: 0;
 }
 
 .qualitative-copy h3 {
@@ -769,18 +769,19 @@ select {
 
 .citation {
   padding-top: 0;
+  padding-bottom: 88px;
 }
 
 .citation-rule {
   height: 5px;
-  margin-bottom: 112px;
+  margin-bottom: 64px;
   background: linear-gradient(90deg, var(--cyan) 0 33.333%, var(--violet) 33.333% 66.666%, var(--orange) 66.666% 100%);
 }
 
 .resource-links {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  margin-top: 62px;
+  margin-top: 44px;
   border-top: 1px solid var(--line-strong);
   border-bottom: 1px solid var(--line-strong);
 }
@@ -789,7 +790,7 @@ select {
   display: flex;
   align-items: center;
   gap: 14px;
-  min-height: 112px;
+  min-height: 96px;
   padding: 20px 26px 20px 0;
   text-decoration: none;
   transition: color 160ms ease, background 160ms ease;
@@ -840,7 +841,7 @@ select {
   grid-template-columns: minmax(0, 0.84fr) minmax(0, 1.16fr);
   gap: 84px;
   align-items: start;
-  margin-top: 78px;
+  margin-top: 52px;
 }
 
 .abstract-block h3,
