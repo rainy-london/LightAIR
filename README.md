@@ -286,8 +286,7 @@ This implementation builds on [X2-VLM](https://github.com/zengyan-97/X2-VLM). We
       <span style="font-size: 0.9em;">
         <a href="https://arxiv.org/abs/2604.20358" target="_blank">Paper</a> | 
         <a href="https://lee-zixu.github.io/ConeSep.github.io/" target="_blank">Project</a> | 
-        <a href="https://github.com/Lee-zixu/ConeSep" target="_blank">Code</a>  |
-        <a href="http://xhslink.com/o/2Cm9p4DMS1" target="_blank">Blog Post (Chinese)</a>    
+        <a href="https://github.com/Lee-zixu/ConeSep" target="_blank">Code</a>
       </span>
     </td>  
           </tr>
@@ -298,8 +297,7 @@ This implementation builds on [X2-VLM](https://github.com/zengyan-97/X2-VLM). We
       <span style="font-size: 0.9em;">
         <a href="http://arxiv.org/abs/2604.19386" target="_blank">Paper</a> | 
         <a href="https://zhihfu.github.io/Air-Know.github.io/" target="_blank">Project</a> | 
-        <a href="https://github.com/ZhihFu/Air-Know" target="_blank">Code</a>  |
-        <a href="http://xhslink.com/o/5oVjQ1a3apO" target="_blank">Blog Post (Chinese)</a>  
+        <a href="https://github.com/ZhihFu/Air-Know" target="_blank">Code</a>
       </span>
     </td>  
     <td style="width:30%; border:none; vertical-align:top; padding-top:30px;">
