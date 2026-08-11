@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Environments and editors
+.env
+.env.*
+.venv/
+venv/
+env/
+.idea/
+.vscode/
+*.code-workspace
+
+# Local data, checkpoints, and experiment outputs
+PAB/
+checkpoint/
+checkpoints/
+output/
+outputs/
+out/
+logs/
+runs/
+wandb/
+*.ckpt
+*.pth
+*.pt
+*.th
+
+# Local paper/source and QA artifacts
+tmp/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini

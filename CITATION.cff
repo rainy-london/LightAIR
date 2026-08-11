@@ -1,0 +1,58 @@
+cff-version: 1.2.0
+message: "If you use LightAIR in your research, please cite the ACM Multimedia 2026 paper."
+title: "LightAIR: Lightweight Action Inversion and Riemannian Rectification for Text-based Person Anomaly Search"
+type: conference-paper
+doi: 10.1145/3767308.3835461
+date-released: 2026-08-10
+url: "https://rainy-london.github.io/LightAIR/"
+repository-code: "https://github.com/rainy-london/LightAIR"
+authors:
+  - family-names: Zhang
+    given-names: Yulun
+    website: "https://rainy-london.github.io/"
+  - family-names: Li
+    given-names: Zixu
+    website: "https://lee-zixu.github.io/"
+  - family-names: Chen
+    given-names: Zhiwei
+    website: "https://zivchen-ty.github.io/"
+  - family-names: Fu
+    given-names: Zhiheng
+    website: "https://zhihfu.github.io/"
+  - family-names: Wang
+    given-names: Wenbo
+  - family-names: Qiu
+    given-names: Zihang
+  - family-names: Wang
+    given-names: Zhilin
+  - family-names: Wang
+    given-names: Ruxin
+    website: "https://mathwrx.github.io/"
+  - family-names: Hu
+    given-names: Yupeng
+    website: "https://faculty.sdu.edu.cn/huyupeng/en/index.htm"
+preferred-citation:
+  type: conference-paper
+  title: "LightAIR: Lightweight Action Inversion and Riemannian Rectification for Text-based Person Anomaly Search"
+  year: 2026
+  collection-title: "Proceedings of the 34th ACM International Conference on Multimedia"
+  doi: 10.1145/3767308.3835461
+  authors:
+    - family-names: Zhang
+      given-names: Yulun
+    - family-names: Li
+      given-names: Zixu
+    - family-names: Chen
+      given-names: Zhiwei
+    - family-names: Fu
+      given-names: Zhiheng
+    - family-names: Wang
+      given-names: Wenbo
+    - family-names: Qiu
+      given-names: Zihang
+    - family-names: Wang
+      given-names: Zhilin
+    - family-names: Wang
+      given-names: Ruxin
+    - family-names: Hu
+      given-names: Yupeng

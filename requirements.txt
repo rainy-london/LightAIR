@@ -1,0 +1,22 @@
+torch
+torchvision
+numpy
+Pillow
+opencv-python
+scipy
+tqdm
+prettytable
+ruamel.yaml
+transformers==4.36.2
+timm
+einops
+packaging
+matplotlib
+seaborn
+thop
+nltk
+spacy
+sentence-transformers
+
+# Optional: only needed for TensorFlow checkpoint conversion utilities in BERT/RoBERTa code.
+# tensorflow

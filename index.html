@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="LightAIR is a lightweight action inversion and Riemannian rectification framework for text-based person anomaly search, accepted by ACM Multimedia 2026.">
+    <meta name="keywords" content="LightAIR, text-based person anomaly search, TPAS, text-to-image person retrieval, computer vision, ACM Multimedia 2026">
+    <meta name="author" content="Yulun Zhang, Zixu Li, Zhiwei Chen, Zhiheng Fu, Wenbo Wang, Zihang Qiu, Zhilin Wang, Ruxin Wang, Yupeng Hu">
+    <link rel="canonical" href="https://rainy-london.github.io/LightAIR/">
+    <link rel="icon" type="image/png" href="static/images/favicon.png">
+    <link rel="stylesheet" href="static/css/index.css">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="LightAIR | ACM Multimedia 2026">
+    <meta property="og:description" content="Lightweight Action Inversion and Riemannian Rectification for Text-based Person Anomaly Search.">
+    <meta property="og:url" content="https://rainy-london.github.io/LightAIR/">
+    <meta property="og:image" content="https://rainy-london.github.io/LightAIR/static/images/method.webp">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <title>LightAIR | ACM Multimedia 2026</title>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ScholarlyArticle",
+        "name": "LightAIR: Lightweight Action Inversion and Riemannian Rectification for Text-based Person Anomaly Search",
+        "url": "https://rainy-london.github.io/LightAIR/",
+        "sameAs": [
+          "https://arxiv.org/abs/2608.09152",
+          "https://doi.org/10.1145/3767308.3835461",
+          "https://github.com/rainy-london/LightAIR"
+        ],
+        "datePublished": "2026-08-10",
+        "isPartOf": {
+          "@type": "PublicationEvent",
+          "name": "ACM Multimedia 2026"
+        },
+        "author": [
+          {"@type": "Person", "name": "Yulun Zhang"},
+          {"@type": "Person", "name": "Zixu Li"},
+          {"@type": "Person", "name": "Zhiwei Chen"},
+          {"@type": "Person", "name": "Zhiheng Fu"},
+          {"@type": "Person", "name": "Wenbo Wang"},
+          {"@type": "Person", "name": "Zihang Qiu"},
+          {"@type": "Person", "name": "Zhilin Wang"},
+          {"@type": "Person", "name": "Ruxin Wang"},
+          {"@type": "Person", "name": "Yupeng Hu"}
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header" data-header>
+      <div class="nav-shell">
+        <a class="brand" href="#top" aria-label="LightAIR home">
+          <img src="static/images/lightair-logo.png" alt="LightAIR" width="1792" height="592">
+        </a>
+
+        <button class="icon-button menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="site-nav" data-menu-toggle>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16"></path>
+          </svg>
+        </button>
+
+        <nav class="site-nav" id="site-nav" aria-label="Primary navigation" data-nav>
+          <a href="#overview">Overview</a>
+          <a href="#method">Method</a>
+          <a href="#results">Results</a>
+          <a href="#citation">Citation</a>
+          <a class="nav-code" href="https://github.com/rainy-london/LightAIR" target="_blank" rel="noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3.3-.4 6.8-1.6 6.8-7A5.4 5.4 0 0 0 19.4 4 5 5 0 0 0 19.3.5S18.2.1 15 1.8a13.4 13.4 0 0 0-7 0C4.8.1 3.7.5 3.7.5A5 5 0 0 0 3.6 4a5.4 5.4 0 0 0-1.4 3.7c0 5.4 3.5 6.6 6.8 7A4.8 4.8 0 0 0 8 18v4"></path>
+              <path d="M8 19c-3 .9-3-1.5-4-2"></path>
+            </svg>
+            GitHub
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="hero-art" aria-hidden="true"></div>
+        <div class="hero-shell">
+          <img class="hero-logo" src="static/images/lightair-logo.png" alt="LightAIR" width="1792" height="592">
+
+          <h1 id="hero-title">
+            <span>LightAIR:</span>
+            Lightweight Action Inversion and Riemannian Rectification for Text-based Person Anomaly Search
+          </h1>
+
+          <div class="authors" aria-label="Paper authors">
+            <a href="https://rainy-london.github.io/" target="_blank" rel="noreferrer">Yulun Zhang</a>,
+            <a href="https://lee-zixu.github.io/" target="_blank" rel="noreferrer">Zixu Li<sup>&dagger;</sup></a>,
+            <a href="https://zivchen-ty.github.io/" target="_blank" rel="noreferrer">Zhiwei Chen</a>,
+            <a href="https://zhihfu.github.io/" target="_blank" rel="noreferrer">Zhiheng Fu</a>,
+            <span>Wenbo Wang</span>,
+            <span>Zihang Qiu</span>,
+            <span>Zhilin Wang</span>,
+            <a href="https://mathwrx.github.io/" target="_blank" rel="noreferrer">Ruxin Wang<sup>&#9993;</sup></a>,
+            <a href="https://faculty.sdu.edu.cn/huyupeng/en/index.htm" target="_blank" rel="noreferrer">Yupeng Hu</a>
+          </div>
+
+          <div class="affiliations">
+            <span><sup>1</sup> Shenzhen Institutes of Advanced Technology, Chinese Academy of Sciences</span>
+            <span><sup>2</sup> Shandong University</span>
+            <span><sup>&dagger;</sup> Project leader</span>
+            <span><sup>&#9993;</sup> Corresponding author</span>
+          </div>
+
+          <p class="venue">ACM Multimedia 2026</p>
+
+          <div class="hero-actions" aria-label="Paper resources">
+            <a class="button button-primary" href="https://arxiv.org/abs/2608.09152" target="_blank" rel="noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+                <path d="M14 2v6h6M8 13h8M8 17h5"></path>
+              </svg>
+              Paper
+            </a>
+            <a class="button" href="https://arxiv.org/pdf/2608.09152" target="_blank" rel="noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 3v12M7 10l5 5 5-5"></path>
+                <path d="M5 21h14"></path>
+              </svg>
+              PDF
+            </a>
+            <a class="button" href="https://github.com/rainy-london/LightAIR" target="_blank" rel="noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3.3-.4 6.8-1.6 6.8-7A5.4 5.4 0 0 0 19.4 4 5 5 0 0 0 19.3.5S18.2.1 15 1.8a13.4 13.4 0 0 0-7 0C4.8.1 3.7.5 3.7.5A5 5 0 0 0 3.6 4a5.4 5.4 0 0 0-1.4 3.7c0 5.4 3.5 6.6 6.8 7A4.8 4.8 0 0 0 8 18v4"></path>
+                <path d="M8 19c-3 .9-3-1.5-4-2"></path>
+              </svg>
+              Code
+            </a>
+            <a class="button" href="#citation">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 21c3 0 7-1 7-8V5c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v4c0 1.1.9 2 2 2h3c0 4-1 6-4 6v4zM14 21c3 0 7-1 7-8V5c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v4c0 1.1.9 2 2 2h3c0 4-1 6-4 6v4z"></path>
+              </svg>
+              BibTeX
+            </a>
+          </div>
+        </div>
+
+        <a class="section-cue" href="#overview">
+          <span>Overview</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"></path></svg>
+        </a>
+      </section>
+
+      <section class="section overview" id="overview" aria-labelledby="overview-title">
+        <div class="section-shell">
+          <div class="section-heading">
+            <p class="section-index">01 / Overview</p>
+            <h2 id="overview-title">Finding the action, not just the person</h2>
+            <p>Text-based person anomaly search must match both macro-level appearance and micro-level behavior. Dominant appearance cues can swallow subtle action signals, while hard negatives encourage harmful optimization shortcuts.</p>
+          </div>
+
+          <div class="problem-rail" aria-label="Core challenges">
+            <div>
+              <span class="rail-mark rail-cyan">01</span>
+              <h3>Action signals are subtle</h3>
+              <p>Fine-grained behaviors occupy a much weaker signal than clothing, color, and identity.</p>
+            </div>
+            <div>
+              <span class="rail-mark rail-violet">02</span>
+              <h3>Appearance features dominate</h3>
+              <p>Pixel-level entanglement contaminates action representations and weakens retrieval.</p>
+            </div>
+            <div>
+              <span class="rail-mark rail-orange">03</span>
+              <h3>Hard negatives invite shortcuts</h3>
+              <p>Same-appearance, different-action samples can push optimization off the semantic manifold.</p>
+            </div>
+          </div>
+
+          <figure class="paper-figure">
+            <div class="figure-label">Why TPAS is difficult</div>
+            <button class="figure-zoom" type="button" data-zoom-src="static/images/intro.webp" data-zoom-alt="LightAIR motivation figure explaining TPAS, visual decoupling failure, and shortcut learning" data-zoom-caption="LightAIR targets visual decoupling failure and shortcut learning without relying on external pose estimators." aria-label="Open the LightAIR motivation figure at full size">
+              <img src="static/images/intro.webp" alt="LightAIR motivation figure explaining the shift from TIPR to TPAS, visual decoupling failure, and shortcut learning" width="2835" height="2126" loading="lazy">
+              <span class="zoom-hint" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3M11 8v6M8 11h6"></path></svg>
+              </span>
+            </button>
+            <figcaption>LightAIR targets visual decoupling failure and shortcut learning without relying on external pose estimators.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section method" id="method" aria-labelledby="method-title">
+        <div class="section-shell">
+          <div class="section-heading">
+            <p class="section-index">02 / Method</p>
+            <h2 id="method-title">A geometric route to clean action semantics</h2>
+            <p>LightAIR separates action from appearance in the forward pass, then preserves that separation during optimization.</p>
+          </div>
+
+          <div class="method-rail">
+            <article>
+              <span class="method-number method-cyan">01</span>
+              <h3>Action Inversion Operator</h3>
+              <p>Reconstructs pure action features from a frozen text-derived semantic codebook.</p>
+            </article>
+            <article>
+              <span class="method-number method-violet">02</span>
+              <h3>Orthogonal Null-Space Projection</h3>
+              <p>Constrains appearance features to the orthogonal complement of the action subspace.</p>
+            </article>
+            <article>
+              <span class="method-number method-orange">03</span>
+              <h3>Gradient Rectification</h3>
+              <p>Projects updates onto a Riemannian tangent space to suppress harmful shortcuts.</p>
+            </article>
+          </div>
+
+          <figure class="paper-figure method-figure">
+            <div class="figure-label">LightAIR framework</div>
+            <button class="figure-zoom" type="button" data-zoom-src="static/images/method.webp" data-zoom-alt="LightAIR framework with Action Inversion Operator, Orthogonal Null-Space Projection, and Gradient Rectification" data-zoom-caption="AIO extracts action anchors, ONSP guarantees forward decoupling, and GR protects the semantic manifold during backpropagation." aria-label="Open the LightAIR framework figure at full size">
+              <img src="static/images/method.webp" alt="LightAIR framework with Action Inversion Operator, Orthogonal Null-Space Projection, and Gradient Rectification" width="2835" height="1350" loading="lazy">
+              <span class="zoom-hint" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3M11 8v6M8 11h6"></path></svg>
+              </span>
+            </button>
+            <figcaption>AIO extracts action anchors, ONSP guarantees forward decoupling, and GR protects the semantic manifold during backpropagation.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="results" id="results" aria-labelledby="results-title">
+        <div class="results-dark">
+          <div class="section-shell">
+            <div class="section-heading section-heading-light">
+              <p class="section-index">03 / Results</p>
+              <h2 id="results-title">Strong retrieval, robust beyond the training domain</h2>
+              <p>LightAIR improves fine-grained anomaly retrieval while generalizing across weather, out-of-distribution data, and conventional person retrieval benchmarks.</p>
+            </div>
+
+            <div class="metric-rail" aria-label="Selected paper results">
+              <article>
+                <p>PAB (1M)</p>
+                <strong>85.49</strong>
+                <span>R@1</span>
+                <small>92.20 mAP</small>
+              </article>
+              <article>
+                <p>MultiWeather mean</p>
+                <strong>68.87</strong>
+                <span>R@1</span>
+                <small>79.69 mAP</small>
+              </article>
+              <article>
+                <p>UCC OOD (1M)</p>
+                <strong>63.27</strong>
+                <span>R@1</span>
+                <small>52.25 mAP</small>
+              </article>
+              <article>
+                <p>UFine3C</p>
+                <strong>83.32</strong>
+                <span>Avg. Recall</span>
+                <small>TIPR benchmark</small>
+              </article>
+            </div>
+
+            <div class="comparison" aria-labelledby="comparison-title">
+              <div class="comparison-heading">
+                <div>
+                  <h3 id="comparison-title">Consistent gains over CMP</h3>
+                  <p>R@1 comparison from the paper.</p>
+                </div>
+                <div class="legend" aria-label="Chart legend">
+                  <span><i class="legend-lightair"></i>LightAIR</span>
+                  <span><i class="legend-cmp"></i>CMP</span>
+                </div>
+              </div>
+
+              <div class="bar-groups">
+                <div class="bar-group">
+                  <div class="bar-label"><span>PAB (1M)</span><span>85.49 vs 84.93</span></div>
+                  <div class="bar-row"><i class="bar bar-lightair" style="--bar-width: 85.49%"></i></div>
+                  <div class="bar-row"><i class="bar bar-cmp" style="--bar-width: 84.93%"></i></div>
+                </div>
+                <div class="bar-group">
+                  <div class="bar-label"><span>MultiWeather mean</span><span>68.87 vs 67.12</span></div>
+                  <div class="bar-row"><i class="bar bar-lightair" style="--bar-width: 68.87%"></i></div>
+                  <div class="bar-row"><i class="bar bar-cmp" style="--bar-width: 67.12%"></i></div>
+                </div>
+                <div class="bar-group">
+                  <div class="bar-label"><span>UCC OOD (1M)</span><span>63.27 vs 55.23</span></div>
+                  <div class="bar-row"><i class="bar bar-lightair" style="--bar-width: 63.27%"></i></div>
+                  <div class="bar-row"><i class="bar bar-cmp" style="--bar-width: 55.23%"></i></div>
+                </div>
+              </div>
+              <p class="results-note">All values are reported in the paper. Data scale is shown where applicable.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="qualitative">
+          <div class="section-shell qualitative-layout">
+            <div class="qualitative-copy">
+              <p class="section-index">Qualitative retrieval</p>
+              <h3>Better rankings on action-sensitive queries</h3>
+              <p>Across challenging descriptions, LightAIR moves action-consistent gallery images toward the top of the retrieval list compared with CMP.</p>
+            </div>
+            <figure class="paper-figure qualitative-figure">
+              <button class="figure-zoom" type="button" data-zoom-src="static/images/qualitative.webp" data-zoom-alt="Qualitative retrieval comparisons between LightAIR and CMP" data-zoom-caption="Qualitative retrieval comparisons from the LightAIR paper." aria-label="Open the qualitative retrieval figure at full size">
+                <img src="static/images/qualitative.webp" alt="Qualitative retrieval comparisons between LightAIR and CMP for four action-sensitive text queries" width="2835" height="3780" loading="lazy">
+                <span class="zoom-hint" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3M11 8v6M8 11h6"></path></svg>
+                </span>
+              </button>
+              <figcaption>Qualitative retrieval comparisons from the LightAIR paper.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="section citation" id="citation" aria-labelledby="citation-title">
+        <div class="section-shell">
+          <div class="citation-rule" aria-hidden="true"></div>
+          <div class="section-heading">
+            <p class="section-index">04 / Paper &amp; Citation</p>
+            <h2 id="citation-title">Read, reproduce, and cite LightAIR</h2>
+            <p>The paper, source code, and citation metadata are available from the links below.</p>
+          </div>
+
+          <div class="resource-links" aria-label="Project resources">
+            <a href="https://arxiv.org/abs/2608.09152" target="_blank" rel="noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><path d="M14 2v6h6M8 13h8M8 17h5"></path></svg>
+              <span><strong>Paper</strong><small>arXiv abstract</small></span>
+            </a>
+            <a href="https://arxiv.org/pdf/2608.09152" target="_blank" rel="noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5"></path><path d="M5 21h14"></path></svg>
+              <span><strong>PDF</strong><small>20-page manuscript</small></span>
+            </a>
+            <a href="https://github.com/rainy-london/LightAIR" target="_blank" rel="noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3.3-.4 6.8-1.6 6.8-7A5.4 5.4 0 0 0 19.4 4 5 5 0 0 0 19.3.5S18.2.1 15 1.8a13.4 13.4 0 0 0-7 0C4.8.1 3.7.5 3.7.5A5 5 0 0 0 3.6 4a5.4 5.4 0 0 0-1.4 3.7c0 5.4 3.5 6.6 6.8 7A4.8 4.8 0 0 0 8 18v4"></path><path d="M8 19c-3 .9-3-1.5-4-2"></path></svg>
+              <span><strong>Code</strong><small>PyTorch implementation</small></span>
+            </a>
+            <a href="https://doi.org/10.1145/3767308.3835461" target="_blank" rel="noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l2-2a5 5 0 0 0-7.1-7.1l-1.1 1.1"></path><path d="M14 11a5 5 0 0 0-7.5-.5l-2 2a5 5 0 0 0 7.1 7.1l1.1-1.1"></path></svg>
+              <span><strong>DOI</strong><small>10.1145/3767308.3835461</small></span>
+            </a>
+          </div>
+
+          <div class="citation-grid">
+            <article class="abstract-block">
+              <h3>Abstract</h3>
+              <p>LightAIR addresses visual decoupling failure and shortcut learning in text-based person anomaly search. It reconstructs action features from textual semantic anchors, projects appearance into the orthogonal complement of the action subspace, and rectifies optimization along a Riemannian tangent space. Experiments on TPAS and TIPR benchmarks show consistent state-of-the-art performance.</p>
+              <p class="acknowledgement">The implementation builds on X2-VLM and evaluates TPAS with the PAB benchmark. See the repository README for installation, data preparation, and evaluation instructions.</p>
+            </article>
+
+            <div class="bibtex-block">
+              <div class="bibtex-header">
+                <h3>BibTeX</h3>
+                <button class="icon-button copy-button" type="button" aria-label="Copy BibTeX citation" title="Copy BibTeX" data-copy-bibtex>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg>
+                </button>
+              </div>
+              <pre><code id="bibtex-code">@inproceedings{zhang2026lightair,
+  author    = {Yulun Zhang and Zixu Li and Zhiwei Chen and
+               Zhiheng Fu and Wenbo Wang and Zihang Qiu and
+               Zhilin Wang and Ruxin Wang and Yupeng Hu},
+  title     = {LightAIR: Lightweight Action Inversion and
+               Riemannian Rectification for Text-based Person
+               Anomaly Search},
+  booktitle = {Proceedings of the 34th ACM International
+               Conference on Multimedia},
+  year      = {2026},
+  doi       = {10.1145/3767308.3835461}
+}</code></pre>
+              <p class="copy-status" role="status" aria-live="polite" data-copy-status></p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-shell">
+        <img src="static/images/lightair-logo.png" alt="LightAIR" width="1792" height="592" loading="lazy">
+        <div>
+          <strong>ACM Multimedia 2026</strong>
+          <span>Built for the research community.</span>
+        </div>
+        <nav aria-label="Footer links">
+          <a href="https://arxiv.org/abs/2608.09152" target="_blank" rel="noreferrer">Paper</a>
+          <a href="https://github.com/rainy-london/LightAIR" target="_blank" rel="noreferrer">Code</a>
+          <a href="https://github.com/rainy-london/LightAIR/issues" target="_blank" rel="noreferrer">Issues</a>
+        </nav>
+      </div>
+    </footer>
+
+    <dialog class="figure-dialog" data-figure-dialog>
+      <div class="dialog-toolbar">
+        <p data-dialog-caption></p>
+        <button class="icon-button dialog-close" type="button" aria-label="Close figure" title="Close" data-dialog-close>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"></path></svg>
+        </button>
+      </div>
+      <div class="dialog-media">
+        <img src="" alt="" data-dialog-image>
+      </div>
+    </dialog>
+
+    <script src="static/js/index.js"></script>
+  </body>
+</html>
