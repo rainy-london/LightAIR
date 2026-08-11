@@ -3,6 +3,16 @@
   const menuToggle = document.querySelector("[data-menu-toggle]");
   const nav = document.querySelector("[data-nav]");
   const menuPath = menuToggle?.querySelector("path");
+  const researchMenu = document.querySelector("[data-research-menu]");
+  const researchToggle = document.querySelector("[data-research-toggle]");
+  const researchDropdown = document.querySelector("[data-research-dropdown]");
+
+  const setResearchState = (open) => {
+    if (!researchMenu || !researchToggle || !researchDropdown) return;
+    researchMenu.classList.toggle("is-open", open);
+    researchToggle.setAttribute("aria-expanded", String(open));
+    researchDropdown.setAttribute("aria-hidden", String(!open));
+  };
 
   const setMenuState = (open) => {
     if (!menuToggle || !nav || !menuPath) return;
@@ -11,18 +21,46 @@
     menuToggle.setAttribute("aria-expanded", String(open));
     menuToggle.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
     menuPath.setAttribute("d", open ? "M18 6 6 18M6 6l12 12" : "M4 7h16M4 12h16M4 17h16");
+    if (!open) setResearchState(false);
   };
 
   menuToggle?.addEventListener("click", () => {
     setMenuState(menuToggle.getAttribute("aria-expanded") !== "true");
   });
 
-  nav?.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => setMenuState(false));
+  researchToggle?.addEventListener("click", () => {
+    setResearchState(researchToggle.getAttribute("aria-expanded") !== "true");
   });
 
-  window.addEventListener("resize", () => {
-    if (window.innerWidth > 1020) setMenuState(false);
+  document.addEventListener("click", (event) => {
+    if (researchMenu && !researchMenu.contains(event.target)) setResearchState(false);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape") return;
+
+    if (researchToggle?.getAttribute("aria-expanded") === "true") {
+      setResearchState(false);
+      researchToggle.focus();
+      return;
+    }
+
+    if (menuToggle?.getAttribute("aria-expanded") === "true") {
+      setMenuState(false);
+      menuToggle.focus();
+    }
+  });
+
+  nav?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      setResearchState(false);
+      setMenuState(false);
+    });
+  });
+
+  window.matchMedia("(max-width: 920px)").addEventListener("change", () => {
+    setMenuState(false);
+    setResearchState(false);
   });
 
   const updateHeader = () => {
