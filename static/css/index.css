@@ -918,25 +918,14 @@ select {
 
 .benchmark-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 60px 42px;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 64px;
   margin-top: 64px;
 }
 
 .benchmark-grid .paper-figure {
   min-width: 0;
   margin: 0;
-}
-
-.benchmark-wide,
-.benchmark-compact {
-  grid-column: 1 / -1;
-}
-
-.benchmark-compact {
-  width: min(100%, 920px);
-  margin-right: auto !important;
-  margin-left: auto !important;
 }
 
 .qualitative {
@@ -1608,11 +1597,6 @@ select {
     grid-template-columns: 1fr;
     gap: 44px;
     margin-top: 44px;
-  }
-
-  .benchmark-wide,
-  .benchmark-compact {
-    grid-column: 1;
   }
 
   .qualitative {
