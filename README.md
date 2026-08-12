@@ -21,8 +21,8 @@
 </p>
 
 <p align="center">
-  <a href="https://arxiv.org/abs/2608.09152"><img src="https://img.shields.io/badge/Arxiv%20Soon-b31b1b.svg" alt="Arxiv">
-  <a href="https://zhihfu.github.io/"><img src="https://img.shields.io/badge/Author-Homepage-blue.svg" alt="Author homepage"></a>
+  <a href="https://arxiv.org/abs/2608.09152"><img src="https://img.shields.io/badge/Paper-b31b1b.svg" alt="Arxiv">
+  <a href="https://rainy-london.github.io/LightAIR/"><img src="https://img.shields.io/badge/Project-blue.svg" alt="Project"></a>
   <a href="https://pytorch.org/get-started/locally/"><img src="https://img.shields.io/badge/PyTorch-2.1%2B-EE4C2C?logo=pytorch&logoColor=white" alt="PyTorch"></a>
   <img src="https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white" alt="Python">
 </p>
