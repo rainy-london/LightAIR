@@ -540,13 +540,15 @@ select {
 }
 
 .abstract-copy {
-  max-width: var(--reading);
+  max-width: 800px;
   margin: 28px 0 0 274px;
   color: var(--text);
-  font-size: 17px;
-  line-height: 1.78;
+  font-size: 16px;
+  line-height: 1.72;
+  hyphens: auto;
   text-align: justify;
   text-justify: inter-word;
+  -webkit-hyphens: auto;
 }
 
 .paper-figure {
@@ -1035,6 +1037,9 @@ select {
 
   .abstract-copy {
     margin-left: 222px;
+    hyphens: manual;
+    text-align: left;
+    -webkit-hyphens: manual;
   }
 
   .qualitative-layout {
